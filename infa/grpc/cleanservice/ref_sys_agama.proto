@@ -1,0 +1,23 @@
+syntax = "proto3";
+package ref_sys_agama;
+
+option go_package = "/infa/grpc/cleanservice/";
+service RefSysAgamaServer{
+    rpc GetData(Empty) returns (RefSysAgamas);
+}
+
+
+
+message Empty {};
+
+message RefSysAgamas{
+    string message = 1;
+    repeated RefSysAgama Data = 2;
+}
+
+message RefSysAgama{
+    string Id = 1 ;
+    string Nomor = 2;
+    string Kode = 3;
+    string Keterangan = 4;
+}
